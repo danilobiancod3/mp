@@ -1,0 +1,279 @@
+﻿<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Maria Paula</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primaria: #8e44ad;
+      --secundaria: #9b59b6;
+      --fundo: #f5f0fa;
+      --texto: #2c2c2c;
+      --branco: #ffffff;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background-color: var(--fundo);
+      color: var(--texto);
+      line-height: 1.6;
+    }
+
+    header {
+      background: linear-gradient(135deg, var(--primaria), var(--secundaria));
+      color: white;
+      padding: 3rem 2rem;
+      text-align: center;
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      margin-top: 1rem;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    section {
+      padding: 4rem 2rem;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .perfil-container {
+      background-color: white;
+      border-radius: 16px;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
+      padding: 2rem;
+      margin-bottom: 3rem;
+    }
+
+    .perfil-header {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
+
+    .perfil-foto {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid var(--primaria);
+    }
+
+    .perfil-nome a {
+      font-size: 1.5rem;
+      color: var(--texto);
+      text-decoration: none;
+    }
+
+    .perfil-nome a:hover {
+      text-decoration: underline;
+      color: var(--primaria);
+    }
+
+    .grid-imagens {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+      gap: 1rem;
+    }
+
+    .grid-imagens img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+
+    .grid-imagens img:hover {
+      transform: scale(1.03);
+    }
+
+    .contato {
+      text-align: center;
+      background-color: var(--secundaria);
+      padding: 3rem 2rem;
+      color: white;
+    }
+
+    .contato a {
+      color: white;
+      margin: 0 1rem;
+      font-size: 1.2rem;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background-color: var(--primaria);
+      color: white;
+    }
+
+    /* Modal Zoom */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 999;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background-color: rgba(0,0,0,0.8);
+      justify-content: center;
+      align-items: center;
+    }
+
+    .modal img {
+      max-width: 90%;
+      max-height: 90%;
+      border-radius: 12px;
+    }
+
+    .modal.active {
+      display: flex;
+    }
+
+    .modal:after {
+      content: '✕';
+      position: absolute;
+      top: 20px;
+      right: 30px;
+      font-size: 2rem;
+      color: white;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Maria Paula</h1>
+    <nav>
+      <a href="#convites">Convites</a>
+      <a href="#marketing">Marketing Digital</a>
+      <a href="#interiores">Design de Interiores</a>
+      <a href="#edificacoes">Edificações</a>
+    </nav>
+  </header>
+
+  <!-- Seção Convites -->
+  <section id="convites">
+    <div class="perfil-container">
+      <div class="perfil-header">
+        <img class="perfil-foto" src="imagens/convites/logo.jpg" alt="Perfil Marketing">
+        <h2 class="perfil-nome"><a href="https://www.instagram.com/mp_convitesdecasamento/" target="_blank">@mp_convitesdecasamento</a></h2>
+      </div>
+      <div class="grid-imagens">
+        <img src="imagens/convites/post2.jpg" alt="Post 1">
+        <img src="imagens/convites/post1.jpg" alt="Post 2">
+        <!--<img src="imagem-exemplo3.jpg" alt="Post 3">-->
+      </div>
+    </div>
+  </section>
+
+  <!-- Seção Marketing -->
+  <section id="marketing">
+    <div class="perfil-container">
+      <div class="perfil-header">
+        <img class="perfil-foto" src="perfil-marketing.jpg" alt="Perfil Marketing">
+        <h2 class="perfil-nome"><a href="https://instagram.com/marketing_digital" target="_blank">@marketing_digital</a></h2>
+      </div>
+      <div class="grid-imagens">
+        <img src="imagem-exemplo1.jpg" alt="Post 1">
+        <img src="imagem-exemplo2.jpg" alt="Post 2">
+        <img src="imagem-exemplo3.jpg" alt="Post 3">
+      </div>
+    </div>
+  </section>
+
+  <!-- Seção Interiores -->
+  <section id="interiores">
+    <div class="perfil-container">
+      <div class="perfil-header">
+        <img class="perfil-foto" src="perfil-interiores.jpg" alt="Perfil Interiores">
+        <h2 class="perfil-nome"><a href="https://www.instagram.com/mp_designer.de.interiores/" target="_blank">@design_interiores</a></h2>
+      </div>
+      <div class="grid-imagens">
+        <img src="imagens/interiores/post1.jpg" alt="Post 1">
+        <img src="imagens/interiores/post2.jpg" alt="Post 2">
+        <img src="imagens/interiores/post3.jpg" alt="Post 3">
+        <img src="imagens/interiores/post4.jpg" alt="Post 4">
+      </div>
+    </div>
+  </section>
+
+  <!-- Seção Edificações -->
+  <section id="edificacoes">
+    <div class="perfil-container">
+      <div class="perfil-header">
+        <img class="perfil-foto" src="perfil-edificacoes.jpg" alt="Perfil Edificações">
+        <h2 class="perfil-nome"><a href="https://instagram.com/edificacoes_projetos" target="_blank">@edificacoes_projetos</a></h2>
+      </div>
+      <div class="grid-imagens">
+        <img src="imagem-edificacao1.jpg" alt="Post 1">
+        <img src="imagem-edificacao2.jpg" alt="Post 2">
+        <img src="imagem-edificacao3.jpg" alt="Post 3">
+      </div>
+    </div>
+  </section>
+
+  <!-- Contato -->
+  <div class="contato">
+    <h2>Entre em contato</h2>
+    <p>
+      <a href="https://wa.me/seunumerowhatsapp" target="_blank">WhatsApp</a> |
+      <a href="https://instagram.com/seuusuario" target="_blank">Instagram</a>
+    </p>
+  </div>
+
+  <!-- Rodapé -->
+  <footer>
+    <p>&copy; 2025 Seu Nome. Todos os direitos reservados.</p>
+  </footer>
+
+  <!-- Modal -->
+  <div class="modal" id="modalZoom">
+    <img src="" alt="Imagem ampliada" id="modalImagem">
+  </div>
+
+  <!-- Script Zoom -->
+  <script>
+    const imagens = document.querySelectorAll('.grid-imagens img');
+    const modal = document.getElementById('modalZoom');
+    const modalImg = document.getElementById('modalImagem');
+
+    imagens.forEach(img => {
+      img.addEventListener('click', () => {
+        modal.classList.add('active');
+        modalImg.src = img.src;
+        modalImg.alt = img.alt;
+      });
+    });
+
+    modal.addEventListener('click', () => {
+      modal.classList.remove('active');
+      modalImg.src = '';
+    });
+  </script>
+
+</body>
+</html>
