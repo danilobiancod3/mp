@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="pt-br">
 <head>
   <!-- Configurações de codificação e responsividade -->
@@ -88,11 +88,6 @@
       gap: 1rem;
       margin-bottom: 2rem;
     }
-
-  .perfil-nome {
-    max-width: 100%;
-    word-break: break-word; /* Força quebra do texto longo */
-  }
 
 
     /* Foto de perfil circular com borda */
@@ -219,6 +214,22 @@
       color: white;
       cursor: pointer;
     }
+
+    #sobremim h2 {
+  font-size: 2rem;
+  color: var(--primaria);
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+#sobremim p {
+  font-size: 1.1rem;
+  color: var(--texto);
+  margin-bottom: 1rem;
+  text-align: justify;
+}
+
+    
   </style>
 </head>
 
@@ -228,12 +239,28 @@
   <header>
     <h1>Maria Paula</h1>
     <nav>
+      <a href="#sobremim">Sobre mim</a>
       <a href="#convites">Convites</a>
       <a href="#marketing">Marketing Digital</a>
       <a href="#interiores">Design de Interiores</a>
       <a href="#edificacoes">Edificações</a>
     </nav>
   </header>
+
+  <!-- Seção sobremim -->
+<section id="sobremim">
+  <div class="perfil-container">
+    <h2>Sobre Mim</h2>
+    <p>
+      Olá! Sou apaixonada por design, papelaria e eventos especiais. Com dedicação e carinho, crio convites personalizados que tornam momentos importantes ainda mais inesquecíveis. Cada detalhe é pensado para refletir a personalidade e o estilo de quem confia em meu trabalho.
+    </p>
+    <p>
+      Meu objetivo é transformar sonhos em papel, oferecendo uma experiência única desde o primeiro contato até a entrega final. Seja bem-vindo(a)!
+    </p>
+  </div>
+</section>
+
+
 
   <!-- Seção Convites -->
   <section id="convites">
