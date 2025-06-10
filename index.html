@@ -3,7 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Maria Paula</title>
+  <meta name="description" content="Portfólio de Maria Paula com trabalhos em Convites, Marketing Digital, Design de Interiores e Projetos de Edificações.">
+  <meta name="author" content="Maria Paula">
+  <title>Maria Paula | Portfólio Criativo</title>
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
   <style>
     :root {
@@ -36,6 +39,7 @@
 
     nav {
       display: flex;
+      flex-wrap: wrap;
       justify-content: center;
       gap: 2rem;
       margin-top: 1rem;
@@ -45,6 +49,11 @@
       color: white;
       text-decoration: none;
       font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #e6e6e6;
     }
 
     section {
@@ -54,7 +63,7 @@
     }
 
     .perfil-container {
-      background-color: white;
+      background-color: var(--branco);
       border-radius: 16px;
       box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
       padding: 2rem;
@@ -66,6 +75,7 @@
       align-items: center;
       gap: 1rem;
       margin-bottom: 2rem;
+      flex-wrap: wrap;
     }
 
     .perfil-foto {
@@ -89,7 +99,7 @@
 
     .grid-imagens {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+      grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
       gap: 1rem;
     }
 
@@ -119,6 +129,10 @@
       font-size: 1.2rem;
       text-decoration: none;
       font-weight: 500;
+    }
+
+    .contato a:hover {
+      text-decoration: underline;
     }
 
     footer {
@@ -152,7 +166,7 @@
       display: flex;
     }
 
-    .modal:after {
+    .modal::after {
       content: '✕';
       position: absolute;
       top: 20px;
@@ -160,6 +174,20 @@
       font-size: 2rem;
       color: white;
       cursor: pointer;
+    }
+
+    @media (max-width: 600px) {
+      nav {
+        gap: 1rem;
+      }
+
+      .perfil-nome a {
+        font-size: 1.2rem;
+      }
+
+      .grid-imagens img {
+        height: 140px;
+      }
     }
   </style>
 </head>
@@ -179,13 +207,13 @@
   <section id="convites">
     <div class="perfil-container">
       <div class="perfil-header">
-        <img class="perfil-foto" src="imagens/convites/logo.jpg" alt="Perfil Marketing">
+        <img class="perfil-foto" src="imagens/convites/logo.jpg" alt="Logo Convites">
         <h2 class="perfil-nome"><a href="https://www.instagram.com/mp_convitesdecasamento/" target="_blank">@mp_convitesdecasamento</a></h2>
       </div>
       <div class="grid-imagens">
-        <img src="imagens/convites/post2.jpg" alt="Post 1">
-        <img src="imagens/convites/post1.jpg" alt="Post 2">
-        <img src="imagens/convites/post4.jpg" alt="Post 3">
+        <img loading="lazy" src="imagens/convites/post2.jpg" alt="Convite floral elegante">
+        <img loading="lazy" src="imagens/convites/post1.jpg" alt="Convite clássico com laço">
+        <img loading="lazy" src="imagens/convites/post4.jpg" alt="Convite moderno minimalista">
       </div>
     </div>
   </section>
@@ -198,9 +226,9 @@
         <h2 class="perfil-nome"><a href="https://instagram.com/marketing_digital" target="_blank">@marketing_digital</a></h2>
       </div>
       <div class="grid-imagens">
-        <img src="imagem-exemplo1.jpg" alt="Post 1">
-        <img src="imagem-exemplo2.jpg" alt="Post 2">
-        <img src="imagem-exemplo3.jpg" alt="Post 3">
+        <img loading="lazy" src="imagem-exemplo1.jpg" alt="Post sobre SEO">
+        <img loading="lazy" src="imagem-exemplo2.jpg" alt="Campanha de tráfego pago">
+        <img loading="lazy" src="imagem-exemplo3.jpg" alt="Criação de conteúdo visual">
       </div>
     </div>
   </section>
@@ -209,14 +237,14 @@
   <section id="interiores">
     <div class="perfil-container">
       <div class="perfil-header">
-        <img class="perfil-foto" src="perfil-interiores.jpg" alt="Perfil Interiores">
+        <img class="perfil-foto" src="perfil-interiores.jpg" alt="Perfil Design Interiores">
         <h2 class="perfil-nome"><a href="https://www.instagram.com/mp_designer.de.interiores/" target="_blank">@design_interiores</a></h2>
       </div>
       <div class="grid-imagens">
-        <img src="imagens/interiores/post1.jpg" alt="Post 1">
-        <img src="imagens/interiores/post2.jpg" alt="Post 2">
-        <img src="imagens/interiores/post3.jpg" alt="Post 3">
-        <img src="imagens/interiores/post4.jpg" alt="Post 4">
+        <img loading="lazy" src="imagens/interiores/post1.jpg" alt="Sala moderna clean">
+        <img loading="lazy" src="imagens/interiores/post2.jpg" alt="Cozinha planejada elegante">
+        <img loading="lazy" src="imagens/interiores/post3.jpg" alt="Banheiro com iluminação">
+        <img loading="lazy" src="imagens/interiores/post4.jpg" alt="Quarto aconchegante">
       </div>
     </div>
   </section>
@@ -229,7 +257,7 @@
         <h2 class="perfil-nome"><a href="https://instagram.com/edificacoes_projetos" target="_blank">@edificacoes_projetos</a></h2>
       </div>
       <div class="grid-imagens">
-        <img src="imagens/edificacoes/post1.jpg" alt="Post 1">
+        <img loading="lazy" src="imagens/edificacoes/post1.jpg" alt="Projeto residencial moderno">
       </div>
     </div>
   </section>
@@ -238,18 +266,18 @@
   <div class="contato">
     <h2>Entre em contato</h2>
     <p>
-      <a href="https://wa.me/seunumerowhatsapp" target="_blank">WhatsApp</a> |
-      <a href="https://www.instagram.com/maria_paula081200/" target="_blank">Instagram</a>
+      <a href="https://wa.me/seunumerowhatsapp" target="_blank" aria-label="WhatsApp">WhatsApp</a> |
+      <a href="https://www.instagram.com/maria_paula081200/" target="_blank" aria-label="Instagram de Maria Paula">Instagram</a>
     </p>
   </div>
 
   <!-- Rodapé -->
   <footer>
-    <p>&copy; 2025 Seu Nome. Todos os direitos reservados.</p>
+    <p>2025 - Desenvolvido por Danilo Gregorio Bianco.</p>
   </footer>
 
   <!-- Modal -->
-  <div class="modal" id="modalZoom">
+  <div class="modal" id="modalZoom" role="dialog" aria-modal="true" aria-hidden="true">
     <img src="" alt="Imagem ampliada" id="modalImagem">
   </div>
 
@@ -264,12 +292,24 @@
         modal.classList.add('active');
         modalImg.src = img.src;
         modalImg.alt = img.alt;
+        modal.setAttribute('aria-hidden', 'false');
       });
     });
 
-    modal.addEventListener('click', () => {
-      modal.classList.remove('active');
-      modalImg.src = '';
+    modal.addEventListener('click', (e) => {
+      if (e.target !== modalImg) {
+        modal.classList.remove('active');
+        modalImg.src = '';
+        modal.setAttribute('aria-hidden', 'true');
+      }
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && modal.classList.contains('active')) {
+        modal.classList.remove('active');
+        modalImg.src = '';
+        modal.setAttribute('aria-hidden', 'true');
+      }
     });
   </script>
 
