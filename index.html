@@ -1,364 +1,160 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
-  <!-- Configurações de codificação e responsividade -->
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Maria Paula</title>
-
-  <!-- Fonte Poppins do Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
-
-  <!-- Estilo CSS embutido -->
+  <link rel="icon" href="imagens/logo.png" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
   <style>
-    /* Variáveis de cor (usadas para facilitar manutenção) */
-    :root {
-      --primaria: #8e44ad;
-      --secundaria: #9b59b6;
-      --fundo: #f5f0fa;
-      --texto: #2c2c2c;
-      --branco: #ffffff;
-    }
-
-    /* Reset básico e tipografia padrão */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Poppins', sans-serif;
-    }
-
-    /* Estilo do corpo da página */
-    body {
-      background-color: var(--fundo);
-      color: var(--texto);
-      line-height: 1.6;
-    }
-
-    /* Cabeçalho com gradiente e navegação centralizada */
-    header {
-      background: linear-gradient(135deg, var(--primaria), var(--secundaria));
-      color: white;
-      padding: 3rem 2rem;
-      text-align: center;
-    }
-
-    /* Aumenta o tamanho do título */
-    header h1 {
-      font-size: 3rem;
-      font-weight: 700;
-    }
-
-    /* Navegação do cabeçalho */
-    nav {
-      display: flex;
-      justify-content: center;
-      gap: 2rem;
-      margin-top: 1rem;
-    }
-
-    /* Estilo dos links de navegação */
-    nav a {
-      color: white;
-      text-decoration: none;
-      font-weight: 500;
-    }
-
-    /* Estilo geral das seções */
-    section {
-      padding: 1rem 1rem;
-      max-width: 1000px;
-      margin: 0 auto;
-    }
-
-    /* Container com fundo branco e sombra */
-    .perfil-container {
-      background-color: white;
-      border-radius: 16px;
-      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
-      padding: 2rem;
-      margin-bottom: 3rem;
-    }
-
-    /* Cabeçalho de cada perfil (foto + nome) */
-    .perfil-header {
-      display: flex;
-      flex-wrap: wrap; /* Permite que o conteúdo quebre linha */
-      align-items: center;
-      gap: 1rem;
-      margin-bottom: 2rem;
-    }
-
-
-    /* Foto de perfil circular com borda */
-    .perfil-foto {
-      width: 80px;
-      height: 80px;
-      border-radius: 50%;
-      object-fit: cover;
-      border: 3px solid var(--primaria);
-    }
-
-    /* Nome do perfil com link */
-    .perfil-nome a {
-      font-size: 1.5rem;
-      color: var(--texto);
-      text-decoration: none;
-    }
-
-    /* Efeito hover no nome do perfil */
-    .perfil-nome a:hover {
-      text-decoration: underline;
-      color: var(--primaria);
-    }
-
-    /* Grid responsivo das imagens */
-    .grid-imagens {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
-    gap: 1rem;
-  }
-
-/* Estilo para telas pequenas (até 768px de largura) */
-  @media (max-width: 768px) {
-    .grid-imagens {
-      display: flex;
-      overflow-x: auto;
-      padding-bottom: 1rem;
-      gap: 1rem;
-      scroll-snap-type: x mandatory;
-  }
-
-    .grid-imagens img {
-      flex: 0 0 auto;
-      width: 120px;
-      height: 160px;
-      scroll-snap-align: start;
-    }
-  }
-
-
-    /* Estilo das imagens nos cards */
-    .grid-imagens img {
-      width: 100%;
-      height: 180px;
-      object-fit: cover;
-      border-radius: 8px;
-      cursor: pointer;
-      transition: transform 0.3s ease;
-    }
-
-    /* Efeito de zoom suave ao passar o mouse */
-    .grid-imagens img:hover {
-      transform: scale(1.03);
-    }
-
-    /* Seção de contato */
-    .contato {
-      text-align: center;
-      background-color: var(--secundaria);
-      padding: 3rem 2rem;
-      color: white;
-    }
-
-    /* Estilo dos links na seção de contato */
-    .contato a {
-      color: white;
-      margin: 0 1rem;
-      font-size: 1.2rem;
-      text-decoration: none;
-      font-weight: 500;
-    }
-
-    /* Rodapé */
-    footer {
-      text-align: center;
-      padding: 1rem;
-      background-color: var(--primaria);
-      color: white;
-    }
-
-    /* Estilo do modal para zoom de imagem */
-    .modal {
-      display: none;
-      position: fixed;
-      z-index: 999;
-      top: 0;
-      left: 0;
-      width: 100vw;
-      height: 100vh;
-      background-color: rgba(0,0,0,0.8);
-      justify-content: center;
-      align-items: center;
-    }
-
-    /* Imagem dentro do modal */
-    .modal img {
-      max-width: 90%;
-      max-height: 90%;
-      border-radius: 12px;
-    }
-
-    /* Classe ativada quando o modal está visível */
-    .modal.active {
-      display: flex;
-    }
-
-    /* Botão de fechar modal (X) */
-    .modal:after {
-      content: '✕';
-      position: absolute;
-      top: 20px;
-      right: 30px;
-      font-size: 2rem;
-      color: white;
-      cursor: pointer;
-    }
-
-    #sobremim h2 {
-  font-size: 2rem;
-  color: var(--primaria);
-  margin-bottom: 1rem;
-  text-align: center;
-}
-
-#sobremim p {
-  font-size: 1.1rem;
-  color: var(--texto);
-  margin-bottom: 1rem;
-  text-align: justify;
-}
-
-    
+    html { scroll-behavior: smooth; }
+    /* Mobile-first: clean base */
   </style>
 </head>
+<body class="font-inter text-gray-800 bg-white">
 
-<body>
-
-  <!-- Cabeçalho com nome e navegação -->
-  <header>
-    <h1>Maria Paula</h1>
-    <nav>
-      <a href="#sobremim">Sobre mim</a>
-      <a href="#convites">Convites</a>
-      <a href="#marketing">Marketing Digital</a>
-      <a href="#interiores">Design de Interiores</a>
-      <a href="#edificacoes">Edificações</a>
+  <!-- Navbar -->
+  <header class="fixed w-full bg-white shadow-sm z-50">
+    <div class="max-w-4xl mx-auto flex items-center justify-between p-4">
+      <a href="#hero" class="text-xl font-bold">Ana Silva</a>
+      <button id="menu-btn" class="md:hidden focus:outline-none">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      </button>
+      <nav id="menu" class="hidden md:flex space-x-6">
+        <a href="#sobre" class="hover:text-gray-600">Sobre</a>
+        <a href="#portfolio" class="hover:text-gray-600">Portfólio</a>
+        <a href="#servicos" class="hover:text-gray-600">Serviços</a>
+        <a href="#contato" class="hover:text-gray-600">Contato</a>
+      </nav>
+    </div>
+    <!-- Mobile menu -->
+    <nav id="mobile-menu" class="md:hidden bg-white hidden">
+      <a href="#sobre" class="block px-4 py-2 border-t">Sobre</a>
+      <a href="#portfolio" class="block px-4 py-2 border-t">Portfólio</a>
+      <a href="#servicos" class="block px-4 py-2 border-t">Serviços</a>
+      <a href="#contato" class="block px-4 py-2 border-t">Contato</a>
     </nav>
   </header>
 
-  <!-- Seção sobremim -->
-<section id="sobremim">
-  <div class="perfil-container">
-    <h2>Sobre Mim</h2>
-    <p>
-      Sou Técnica formada em Edificações e Design de Interiores, tendo conhecimento de diversas etapas da construção civil até o acabamento, decoração e ergonomia do ambiente. Experiencia com as ferramentas de AutoCad e SketchUp.
-    </p>
-    <!--<p>
-      Meu objetivo é transformar sonhos em papel, oferecendo uma experiência única desde o primeiro contato até a entrega final. Seja bem-vindo(a)!
-    </p>-->
-  </div>
-</section>
+  <!-- Hero -->
+  <section id="hero" class="h-screen flex items-center justify-center bg-gradient-to-br from-pink-50 to-white pt-16">
+    <div class="text-center px-6">
+      <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-4">Maria Paula</h1>
+      <p class="text-base sm:text-lg md:text-xl text-gray-600 mb-6">Edificações • Designer de Interiores • Marketing Digital</p>
+      <a href="#portfolio" class="inline-block bg-pink-500 text-white py-3 px-8 rounded-full shadow hover:bg-pink-400 transition">Conheça meu trabalho</a>
+    </div>
+  </section>
 
-
-
-  <!-- Seção Convites -->
-  <section id="convites">
-    <div class="perfil-container">
-      <div class="perfil-header">
-        <img class="perfil-foto" src="imagens/convites/logo.jpg" alt="Perfil Marketing">
-        <h2 class="perfil-nome"><a href="https://www.instagram.com/mp_convitesdecasamento/" target="_blank">@mp_convitesdecasamento</a></h2>
-      </div>
-      <div class="grid-imagens">
-        <img src="imagens/convites/post2.jpg" alt="Post 1">
-        <img src="imagens/convites/post1.jpg" alt="Post 2">
-        <img src="imagens/convites/post4.jpg" alt="Post 3">
+  <!-- Sobre -->
+  <section id="sobre" class="py-16 px-6 bg-white">
+    <div class="max-w-3xl mx-auto flex flex-col md:flex-row items-center gap-6">
+      <img src="https://via.placeholder.com/200" alt="Maria Paula" class="w-40 h-40 rounded-full object-cover mx-auto">
+      <div>
+        <h2 class="text-2xl font-semibold mb-4">Sobre mim</h2>
+        <p class="text-gray-700 leading-relaxed">Sou Técnica formada em Edificações e Design de Interiores, tendo conhecimento de diversas etapas da construção civil até o acabamento, decoração e ergonomia do ambiente. Experiencia com as ferramentas de AutoCad e SketchUp.</p>
       </div>
     </div>
   </section>
 
-  <!-- Seção Marketing -->
-  <section id="marketing">
-    <div class="perfil-container">
-      <div class="perfil-header">
-        <img class="perfil-foto" src="perfil-marketing.jpg" alt="Perfil Marketing">
-        <h2 class="perfil-nome"><a href="https://instagram.com/marketing_digital" target="_blank">@marketing_digital</a></h2>
+  <!-- Portfólio -->
+  <section id="portfolio" class="py-16 px-6 bg-gray-50">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-2xl md:text-3xl font-semibold text-center mb-8">Portfólio</h2>
+      <!-- Filtros -->
+      <div class="flex justify-center space-x-4 mb-8">
+        <button class="filter-btn py-2 px-4 rounded-full bg-pink-100 text-pink-600" data-filter="all">Todos</button>
+        <button class="filter-btn py-2 px-4 rounded-full hover:bg-pink-100 hover:text-pink-600" data-filter="interiores">Interior</button>
+        <button class="filter-btn py-2 px-4 rounded-full hover:bg-pink-100 hover:text-pink-600" data-filter="edificacoes">Edificações</button>
+        <button class="filter-btn py-2 px-4 rounded-full hover:bg-pink-100 hover:text-pink-600" data-filter="marketing">Marketing</button>
+        <button class="filter-btn py-2 px-4 rounded-full hover:bg-pink-100 hover:text-pink-600" data-filter="convites">Convites</button>
       </div>
-      <div class="grid-imagens">
-        <img src="imagem-exemplo1.jpg" alt="Post 1">
-        <img src="imagem-exemplo2.jpg" alt="Post 2">
-        <img src="imagem-exemplo3.jpg" alt="Post 3">
-      </div>
-    </div>
-  </section>
-
-  <!-- Seção Interiores -->
-  <section id="interiores">
-    <div class="perfil-container">
-      <div class="perfil-header">
-        <img class="perfil-foto" src="perfil-interiores.jpg" alt="Perfil Interiores">
-        <h2 class="perfil-nome"><a href="https://www.instagram.com/mp_designer.de.interiores/" target="_blank">@design_interiores</a></h2>
-      </div>
-      <div class="grid-imagens">
-        <img src="imagens/interiores/post1.jpg" alt="Post 1">
-        <img src="imagens/interiores/post2.jpg" alt="Post 2">
-        <img src="imagens/interiores/post3.jpg" alt="Post 3">
-        <img src="imagens/interiores/post4.jpg" alt="Post 4">
+      <!-- Grid -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6" id="projects-grid">
+        <!-- Exemplo de card -->
+        <div class="project-item" data-category="interiores">
+          <img src="https://via.placeholder.com/400x300" alt="Projeto" class="w-full h-48 object-cover rounded-lg shadow">
+          <h3 class="mt-4 font-semibold">Sala Contemporânea</h3>
+          <p class="text-gray-600 text-sm">Ambiente clean e funcional.</p>
+        </div>
+        <!-- repetir outros cards com data-category -->
       </div>
     </div>
   </section>
 
-  <!-- Seção Edificações -->
-  <section id="edificacoes">
-    <div class="perfil-container">
-      <div class="perfil-header">
-        <img class="perfil-foto" src="perfil-edificacoes.jpg" alt="Perfil Edificações">
-        <h2 class="perfil-nome"><a href="https://instagram.com/edificacoes_projetos" target="_blank">@edificacoes_projetos</a></h2>
-      </div>
-      <div class="grid-imagens">
-        <img src="imagens/edificacoes/post1.jpg" alt="Post 1">
+  <!-- Serviços -->
+  <section id="servicos" class="py-16 px-6 bg-white">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-2xl md:text-3xl font-semibold text-center mb-8">Serviços</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="text-center p-6 border rounded-lg">
+          <svg class="mx-auto mb-4 h-10 w-10" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3" />
+          </svg>
+          <h3 class="font-semibold mb-2">Consultoria Completa</h3>
+          <p class="text-gray-600 text-sm">Do conceito à execução, um serviço 360°.</p>
+        </div>
+        <div class="text-center p-6 border rounded-lg">
+          <svg class="mx-auto mb-4 h-10 w-10" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+          </svg>
+          <h3 class="font-semibold mb-2">Identidade Visual</h3>
+          <p class="text-gray-600 text-sm">Marcas exclusivas para eventos e negócios.</p>
+        </div>
+        <div class="text-center p-6 border rounded-lg">
+          <svg class="mx-auto mb-4 h-10 w-10" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 7h18M3 12h18M3 17h18" />
+          </svg>
+          <h3 class="font-semibold mb-2">Marketing Digital</h3>
+          <p class="text-gray-600 text-sm">Estratégias que conectam sua marca ao público.</p>
+        </div>
       </div>
     </div>
   </section>
 
   <!-- Contato -->
-  <div class="contato">
-    <h2>Entre em contato</h2>
-    <p>
-      <a href="https://wa.me/seunumerowhatsapp" target="_blank">WhatsApp</a> |
-      <a href="https://www.instagram.com/maria_paula081200/" target="_blank">Instagram</a>
-    </p>
-  </div>
+  <section id="contato" class="py-16 px-6 bg-gray-50">
+    <div class="max-w-2xl mx-auto">
+      <h2 class="text-2xl md:text-3xl font-semibold text-center mb-8">Contato Profissional</h2>
+      <form class="space-y-4">
+        <input type="text" placeholder="Nome completo" class="w-full p-3 border rounded-lg" required>
+        <input type="email" placeholder="E-mail" class="w-full p-3 border rounded-lg" required>
+        <textarea rows="4" placeholder="Mensagem" class="w-full p-3 border rounded-lg" required></textarea>
+        <button type="submit" class="w-full text-center bg-pink-500 text-white py-3 rounded-full hover:bg-pink-400 transition">Enviar Mensagem</button>
+      </form>
+      <div class="mt-6 text-center text-sm text-gray-600">
+        <p>Email: contato@anasilva.com | Tel: +55 (11) 91234-5678</p>
+        <p>Instagram: <a href="#" class="text-pink-500">@Maria Paula</a></p>
+      </div>
+    </div>
+  </section>
 
-  <!-- Rodapé -->
-  <footer>
-    <p>2025 - Desenvolvido por Danilo Gregorio Bianco.</p>
+  <!-- Footer -->
+  <footer class="py-6 text-center text-gray-500 text-sm bg-white">
+    &copy; 2025 Ana Silva. Todos direitos reservados.
   </footer>
 
-  <!-- Modal para imagem ampliada -->
-  <div class="modal" id="modalZoom">
-    <img src="" alt="Imagem ampliada" id="modalImagem">
-  </div>
-
-  <!-- Script de funcionalidade do modal -->
   <script>
-    const imagens = document.querySelectorAll('.grid-imagens img'); // Seleciona todas as imagens clicáveis
-    const modal = document.getElementById('modalZoom');             // Modal container
-    const modalImg = document.getElementById('modalImagem');        // Imagem do modal
-
-    // Quando qualquer imagem for clicada
-    imagens.forEach(img => {
-      img.addEventListener('click', () => {
-        modal.classList.add('active');      // Mostra o modal
-        modalImg.src = img.src;             // Define a imagem clicada como a imagem do modal
-        modalImg.alt = img.alt;
+    // Toggle Mobile Menu
+    const btn = document.getElementById('menu-btn');
+    const menu = document.getElementById('mobile-menu');
+    btn.addEventListener('click', () => menu.classList.toggle('hidden'));
+    
+    // Portfólio Filter
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const projects = document.querySelectorAll('.project-item');
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const cat = btn.getAttribute('data-filter');
+        projects.forEach(item => {
+          if (cat === 'all' || item.dataset.category === cat) item.classList.remove('hidden');
+          else item.classList.add('hidden');
+        });
+        filterBtns.forEach(b => b.classList.remove('bg-pink-100', 'text-pink-600'));
+        btn.classList.add('bg-pink-100', 'text-pink-600');
       });
-    });
-
-    // Quando o modal for clicado (em qualquer parte), ele se fecha
-    modal.addEventListener('click', () => {
-      modal.classList.remove('active');
-      modalImg.src = '';
     });
   </script>
 
