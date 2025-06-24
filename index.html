@@ -1,15 +1,14 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Maria Paula</title>
   <link rel="icon" href="imagens/logo.png" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700&display=swap" rel="stylesheet">
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
     html { scroll-behavior: smooth; }
-    /* Mobile-first: clean base */
   </style>
 </head>
 <body class="font-inter text-gray-800 bg-white">
@@ -30,7 +29,6 @@
         <a href="#contato" class="hover:text-gray-600">Contato</a>
       </nav>
     </div>
-    <!-- Mobile menu -->
     <nav id="mobile-menu" class="md:hidden bg-white hidden">
       <a href="#sobre" class="block px-4 py-2 border-t">Sobre</a>
       <a href="#portfolio" class="block px-4 py-2 border-t">Portfólio</a>
@@ -43,7 +41,7 @@
   <section id="hero" class="h-screen flex items-center justify-center bg-gradient-to-br from-pink-50 to-white pt-16">
     <div class="text-center px-6">
       <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-4">Maria Paula</h1>
-      <p class="text-base sm:text-lg md:text-xl text-gray-600 mb-6">Edificações • Designer de Interiores • Marketing Digital</p>
+      <p class="text-base sm:text-lg md:text-xl text-gray-600 mb-6">Edificações • Designer de Interiores • Marketing Digital<br>Jaú/SP</p>
       <a href="#portfolio" class="inline-block bg-pink-500 text-white py-3 px-8 rounded-full shadow hover:bg-pink-400 transition">Conheça meu trabalho</a>
     </div>
   </section>
@@ -51,10 +49,9 @@
   <!-- Sobre -->
   <section id="sobre" class="py-16 px-6 bg-white">
     <div class="max-w-3xl mx-auto flex flex-col md:flex-row items-center gap-6">
-      <img src="https://via.placeholder.com/200" alt="Maria Paula" class="w-40 h-40 rounded-full object-cover mx-auto">
       <div>
         <h2 class="text-2xl font-semibold mb-4">Sobre mim</h2>
-        <p class="text-gray-700 leading-relaxed">Sou Técnica formada em Edificações e Design de Interiores, tendo conhecimento de diversas etapas da construção civil até o acabamento, decoração e ergonomia do ambiente. Experiencia com as ferramentas de AutoCad e SketchUp.</p>
+        <p class="text-gray-700 leading-relaxed">Sou Técnica formada em Edificações e Design de Interiores, tendo conhecimento de diversas etapas da construção civil até o acabamento, decoração e ergonomia do ambiente. Experiência com as ferramentas de AutoCad e SketchUp.</p>
       </div>
     </div>
   </section>
@@ -63,7 +60,6 @@
   <section id="portfolio" class="py-16 px-6 bg-gray-50">
     <div class="max-w-4xl mx-auto">
       <h2 class="text-2xl md:text-3xl font-semibold text-center mb-8">Portfólio</h2>
-      <!-- Filtros -->
       <div class="flex flex-wrap justify-center gap-2 sm:gap-4 mb-8 text-sm sm:text-base text-center">
         <button class="filter-btn py-2 px-4 rounded-full bg-pink-100 text-pink-600" data-filter="all">Todos</button>
         <button class="filter-btn py-2 px-4 rounded-full hover:bg-pink-100 hover:text-pink-600" data-filter="interiores">Interior</button>
@@ -71,17 +67,61 @@
         <button class="filter-btn py-2 px-4 rounded-full hover:bg-pink-100 hover:text-pink-600" data-filter="marketing">Marketing</button>
         <button class="filter-btn py-2 px-4 rounded-full hover:bg-pink-100 hover:text-pink-600" data-filter="convites">Convites</button>
       </div>
-      <!-- Grid -->
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6" id="projects-grid">
-        <!-- Exemplo de card -->
-        <div class="project-item" data-category="interiores">
-          <img src="https://via.placeholder.com/400x300" alt="Projeto" class="w-full h-48 object-cover rounded-lg shadow">
-          <h3 class="mt-4 font-semibold">Sala Contemporânea</h3>
-          <p class="text-gray-600 text-sm">Ambiente clean e funcional.</p>
-        </div>
-        <!-- repetir outros cards com data-category -->
-      </div>
+    <!-- Interior -->
+    <div class="project-item" data-category="interiores">
+      <img src="https://via.placeholder.com/400x300?text=Interior" alt="Projeto Interior"
+          class="w-full h-48 object-cover rounded-lg shadow cursor-pointer hover:scale-105 transition"
+          onclick="openModal(this.src)">
+      <h3 class="mt-4 font-semibold">Quarto Minimalista</h3>
+      <p class="text-gray-600 text-sm">Design aconchegante e funcional com tons neutros.</p>
     </div>
+
+    <!-- Edificações -->
+    <div class="project-item" data-category="edificacoes">
+      <img src="https://via.placeholder.com/400x300?text=Edificações" alt="Projeto Edificações"
+          class="w-full h-48 object-cover rounded-lg shadow cursor-pointer hover:scale-105 transition"
+          onclick="openModal(this.src)">
+      <h3 class="mt-4 font-semibold">Projeto Estrutural Residencial</h3>
+      <p class="text-gray-600 text-sm">Planta de fundações e estrutura para residência térrea.</p>
+    </div>
+
+    <!-- Marketing -->
+    <div class="project-item" data-category="marketing">
+      <img src="https://via.placeholder.com/400x300?text=Marketing" alt="Campanha Digital"
+          class="w-full h-48 object-cover rounded-lg shadow cursor-pointer hover:scale-105 transition"
+          onclick="openModal(this.src)">
+      <h3 class="mt-4 font-semibold">Campanha de Verão</h3>
+      <p class="text-gray-600 text-sm">Criação de arte e estratégia para redes sociais.</p>
+    </div>
+
+    <!-- Convites -->
+    <div class="project-item" data-category="convites">
+      <img src="imagens/convites/post1.jpg" alt="Convite Casamento"
+          class="w-full h-48 object-cover rounded-lg shadow cursor-pointer hover:scale-105 transition"
+          onclick="openModal(this.src)">
+      <h3 class="mt-4 font-semibold">Convite de Casamento</h3>
+      <p class="text-gray-600 text-sm">Estilo floral delicado.</p>
+    </div>
+
+    <div class="project-item" data-category="convites">
+      <img src="imagens/convites/post2.jpg" alt="Convite Aniversário"
+          class="w-full h-48 object-cover rounded-lg shadow cursor-pointer hover:scale-105 transition"
+          onclick="openModal(this.src)">
+      <h3 class="mt-4 font-semibold">Convite de Aniversário</h3>
+      <p class="text-gray-600 text-sm">Estilo floral delicado, para evento infantil.</p>
+    </div>
+
+    <div class="project-item" data-category="convites">
+      <img src="imagens/convites/post3.jpg" alt="Convite Aniversário"
+          class="w-full h-48 object-cover rounded-lg shadow cursor-pointer hover:scale-105 transition"
+          onclick="openModal(this.src)">
+      <h3 class="mt-4 font-semibold">Convite de Aniversário</h3>
+      <p class="text-gray-600 text-sm">Tema carros, para evento infantil.</p>
+    </div>
+
+    </div>
+  </div>
   </section>
 
   <!-- Serviços -->
@@ -89,73 +129,123 @@
     <div class="max-w-4xl mx-auto">
       <h2 class="text-2xl md:text-3xl font-semibold text-center mb-8">Serviços</h2>
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        <div class="text-center p-6 border rounded-lg">
-          <svg class="mx-auto mb-4 h-10 w-10" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3" />
+
+        <!-- Edificações & Interior -->
+        <a href="https://www.instagram.com/mp_designer.de.interiores/" class="block text-center p-6 border rounded-lg hover:bg-pink-50 transition">
+          <svg class="mx-auto mb-4 h-10 w-10 text-pink-600" xmlns="http://www.w3.org/2000/svg" fill="none"
+              viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M3 10l9-7 9 7v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V10z" />
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M9 22V12h6v10" />
           </svg>
-          <h3 class="font-semibold mb-2">Consultoria Completa</h3>
-          <p class="text-gray-600 text-sm">Do conceito à execução, um serviço 360°.</p>
-        </div>
-        <div class="text-center p-6 border rounded-lg">
-          <svg class="mx-auto mb-4 h-10 w-10" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-          </svg>
-          <h3 class="font-semibold mb-2">Identidade Visual</h3>
-          <p class="text-gray-600 text-sm">Marcas exclusivas para eventos e negócios.</p>
-        </div>
-        <div class="text-center p-6 border rounded-lg">
-          <svg class="mx-auto mb-4 h-10 w-10" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 7h18M3 12h18M3 17h18" />
+          <h3 class="font-semibold mb-2">Edificações & Interior</h3>
+          <p class="text-gray-600 text-sm">Criação e desenvolvimento de projetos arquitetônicos.</p>
+        </a>
+
+        <!-- Marketing Digital -->
+        <a href="#portfolio" class="block text-center p-6 border rounded-lg hover:bg-pink-50 transition">
+          <svg class="mx-auto mb-4 h-10 w-10 text-pink-600" xmlns="http://www.w3.org/2000/svg" fill="none"
+              viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M15 17h5l-1.405-1.405A2.032 2.032 0 0 1 18 14.158V11a6 6 0 0 0-12 0v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 1 1-6 0v-1m6 0H9" />
           </svg>
           <h3 class="font-semibold mb-2">Marketing Digital</h3>
-          <p class="text-gray-600 text-sm">Estratégias que conectam sua marca ao público.</p>
-        </div>
+          <p class="text-gray-600 text-sm">Estratégias para redes sociais e divulgação online.</p>
+        </a>
+
+        <!-- Convites -->
+        <a href="https://www.instagram.com/mp_convitesdecasamento/" class="block text-center p-6 border rounded-lg hover:bg-pink-50 transition">
+          <svg class="mx-auto mb-4 h-10 w-10 text-pink-600" xmlns="http://www.w3.org/2000/svg" fill="none"
+              viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M16 12l-4 4m0 0l-4-4m4 4V8m5 12a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2H7a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h10z" />
+          </svg>
+          <h3 class="font-semibold mb-2">Convites</h3>
+          <p class="text-gray-600 text-sm">Artes digitais para festas e eventos especiais.</p>
+        </a>
+
       </div>
     </div>
   </section>
 
+
   <!-- Contato -->
   <section id="contato" class="py-16 px-6 bg-gray-50">
-  <div class="max-w-2xl mx-auto">
-    <h2 class="text-2xl md:text-3xl font-semibold text-center mb-8">Contato Profissional</h2>
+    <div class="max-w-2xl mx-auto">
+      <h2 class="text-2xl md:text-3xl font-semibold text-center mb-8">Contato Profissional</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 text-center text-sm text-gray-700">
+        
+        <!-- WhatsApp -->
+        <div>
+          <a href="https://wa.me/5514997924205?text=Olá!%20Gostaria%20de%20falar%20com%20você." 
+            target="_blank" class="flex flex-col items-center text-green-600 hover:underline">
+            <svg class="h-6 w-6 mb-2" fill="currentColor" viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg">
+              <path d="M380.9 97.1C339-19.6 204.4-30 122 
+                52.4c-54.5 54.5-69 133.4-44.7 201.3L32 
+                480l227.1-46.1c67.9 24.3 146.7 9.8 
+                201.2-44.7 82.4-82.4 72-217-30.4-291.1zM224 
+                399.9c-38.2 0-75.2-12.2-105.6-34.7l-7.4-5.3-62.7 
+                12.7L66 309.4l-5.3-7.4C37.2 271.2 25 234.2 25 
+                196 25 105.7 105.7 25 196 25s171 80.7 171 
+                171-80.7 171-143 203.9z"/>
+            </svg>
+            <strong>WhatsApp</strong>
+            <span>+55 (14) 99792-4205</span>
+          </a>
+        </div>
 
-    <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 text-center text-sm text-gray-700">
-      
-      <!-- Email -->
-      <div>
-        <svg class="mx-auto h-6 w-6 text-pink-500 mb-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 12H8m0 0l4-4m-4 4l4 4" />
-        </svg>
-        <p><strong>Email</strong></p>
-        <a href="mailto:contato@anasilva.com" class="text-pink-600 hover:underline">contato@gmail.com</a>
-      </div>
-      
-      <!-- WhatsApp -->
-      <div>
-        <svg class="mx-auto h-6 w-6 text-pink-500 mb-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10.5a9 9 0 101.37 5.56L3 21l5.08-1.3A9 9 0 003 10.5z" />
-        </svg>
-        <p><strong>WhatsApp</strong></p>
-        <a href="https://wa.me/5514997924205?text=Olá!%20Gostaria%20de%20falar%20com%20você." 
-           target="_blank" class="text-pink-600 hover:underline">
-          +55 (11) 91234-5678
-        </a>
-      </div>
-      
-      <!-- Instagram -->
-      <div>
-        <svg class="mx-auto h-6 w-6 text-pink-500 mb-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18 2a9 9 0 00-6 15.29V22l4-2 4 2v-4.71A9 9 0 0018 2z" />
-        </svg>
-        <p><strong>Instagram</strong></p>
-        <a href="https://instagram.com/mariapaula" target="_blank" class="text-pink-600 hover:underline">
-          @mariapaula
-        </a>
-      </div>
+        <!-- Instagram -->
+        <div>
+          <a href="https://www.instagram.com/maria_paula081200/" 
+            target="_blank" class="flex flex-col items-center text-pink-600 hover:underline">
+            <svg class="h-6 w-6 mb-2" fill="currentColor" viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg">
+              <path d="M224 202.7c-30.6 0-55.3 
+                24.8-55.3 55.3s24.8 55.3 55.3 
+                55.3 55.3-24.8 55.3-55.3-24.7-55.3-55.3-55.3zm124.1-41.4c0 
+                13.2-10.8 24-24 24s-24-10.8-24-24 
+                10.8-24 24-24 24 10.8 24 24zM398.8 
+                97.2c-7.9-20.2-23.3-35.7-43.5-43.5C333.2 
+                40 314.1 32 291.1 32H156.9c-23 
+                0-42.1 8-64.2 21.7-20.2 7.9-35.7 23.3-43.5 
+                43.5C40 114.8 32 133.9 32 
+                156.9v134.2c0 23 8 42.1 21.7 
+                64.2 7.9 20.2 23.3 35.7 43.5 
+                43.5C114.8 408 133.9 416 156.9 
+                416h134.2c23 0 42.1-8 64.2-21.7 
+                20.2-7.9 35.7-23.3 43.5-43.5C408 
+                361.2 416 342.1 416 319.1V184.9c0-23-8-42.1-21.7-64.2zM224 
+                338c-62.8 0-114-51.2-114-114s51.2-114 
+                114-114 114 51.2 114 114-51.2 114-114 114z"/>
+            </svg>
+            <strong>Instagram</strong>
+            <span>@maria_paula081200</span>
+          </a>
+        </div>
 
+        <!-- Email -->
+        <div>
+          <a href="mailto:maria.paulamatiello13@gmail.com" 
+            class="flex flex-col items-center text-blue-600 hover:underline">
+            <svg class="h-6 w-6 mb-2" fill="currentColor" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+              <path d="M502.3 190.8L327.4 357.2c-23.5 
+                20.5-59.1 20.5-82.6 0L9.7 
+                190.8C3.9 185.5 0 178.4 0 
+                170.8V408c0 30.9 25.1 56 56 
+                56h400c30.9 0 56-25.1 
+                56-56V170.8c0-7.6-3.9-14.7-9.7-20zM464 
+                96H48c-26.5 0-48 21.5-48 
+                48v16l224 196.8c16.8 14.7 41.2 
+                14.7 58 0L512 160v-16c0-26.5-21.5-48-48-48z"/>
+            </svg>
+            <strong>Email</strong>
+            <span>maria.paulamatiello13@gmail.com</span>
+          </a>
+        </div>
+
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 
   <!-- Footer -->
   <footer class="py-6 text-center text-gray-500 text-sm bg-white">
@@ -164,25 +254,49 @@
     </a>
   </footer>
 
+  <!-- Modal de Imagem -->
+  <div id="imageModal" class="fixed inset-0 z-50 bg-black bg-opacity-80 flex items-center justify-center hidden">
+    <div class="relative max-w-3xl w-full p-4">
+      <button onclick="closeModal()" class="absolute top-2 right-2 text-white text-2xl font-bold">&times;</button>
+      <img id="modalImage" src="" alt="Imagem em destaque" class="w-full h-auto rounded-lg shadow-lg">
+    </div>
+  </div>
+
+
   <script>
-    // Toggle Mobile Menu
     const btn = document.getElementById('menu-btn');
     const menu = document.getElementById('mobile-menu');
-    btn.addEventListener('click', () => menu.classList.toggle('hidden'));
-    
-    // Portfólio Filter
+    btn?.addEventListener('click', () => menu.classList.toggle('hidden'));
+
     const filterBtns = document.querySelectorAll('.filter-btn');
     const projects = document.querySelectorAll('.project-item');
     filterBtns.forEach(btn => {
       btn.addEventListener('click', () => {
         const cat = btn.getAttribute('data-filter');
         projects.forEach(item => {
-          if (cat === 'all' || item.dataset.category === cat) item.classList.remove('hidden');
-          else item.classList.add('hidden');
+          item.classList.toggle('hidden', !(cat === 'all' || item.dataset.category === cat));
         });
         filterBtns.forEach(b => b.classList.remove('bg-pink-100', 'text-pink-600'));
         btn.classList.add('bg-pink-100', 'text-pink-600');
       });
+    });
+
+    function openModal(imageSrc) {
+      const modal = document.getElementById('imageModal');
+      const modalImage = document.getElementById('modalImage');
+      modalImage.src = imageSrc;
+      modal.classList.remove('hidden');
+    }
+
+    function closeModal() {
+      document.getElementById('imageModal').classList.add('hidden');
+    }
+
+    // Fechar modal ao clicar fora da imagem
+    document.getElementById('imageModal').addEventListener('click', function(e) {
+      if (e.target.id === 'imageModal') {
+        closeModal();
+      }
     });
   </script>
 
