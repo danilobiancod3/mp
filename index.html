@@ -64,12 +64,12 @@
     <div class="max-w-4xl mx-auto">
       <h2 class="text-2xl md:text-3xl font-semibold text-center mb-8">Portfólio</h2>
       <!-- Filtros -->
-      <div class="flex justify-center space-x-4 mb-8">
-        <button class="filter-btn py-2 px-4 rounded-full bg-pink-80 text-pink-600" data-filter="all">Todos</button>
-        <button class="filter-btn py-2 px-4 rounded-full hover:bg-pink-80 hover:text-pink-600" data-filter="interiores">Interior</button>
-        <button class="filter-btn py-2 px-4 rounded-full hover:bg-pink-80 hover:text-pink-600" data-filter="edificacoes">Edificações</button>
-        <button class="filter-btn py-2 px-4 rounded-full hover:bg-pink-80 hover:text-pink-600" data-filter="marketing">Marketing</button>
-        <button class="filter-btn py-2 px-4 rounded-full hover:bg-pink-80 hover:text-pink-600" data-filter="convites">Convites</button>
+      <div class="flex flex-wrap justify-center gap-2 sm:gap-4 mb-8 text-sm sm:text-base text-center">
+        <button class="filter-btn py-2 px-4 rounded-full bg-pink-100 text-pink-600" data-filter="all">Todos</button>
+        <button class="filter-btn py-2 px-4 rounded-full hover:bg-pink-100 hover:text-pink-600" data-filter="interiores">Interior</button>
+        <button class="filter-btn py-2 px-4 rounded-full hover:bg-pink-100 hover:text-pink-600" data-filter="edificacoes">Edificações</button>
+        <button class="filter-btn py-2 px-4 rounded-full hover:bg-pink-100 hover:text-pink-600" data-filter="marketing">Marketing</button>
+        <button class="filter-btn py-2 px-4 rounded-full hover:bg-pink-100 hover:text-pink-600" data-filter="convites">Convites</button>
       </div>
       <!-- Grid -->
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6" id="projects-grid">
@@ -116,24 +116,52 @@
 
   <!-- Contato -->
   <section id="contato" class="py-16 px-6 bg-gray-50">
-    <div class="max-w-2xl mx-auto">
-      <h2 class="text-2xl md:text-3xl font-semibold text-center mb-8">Contato Profissional</h2>
-      <form class="space-y-4">
-        <input type="text" placeholder="Nome completo" class="w-full p-3 border rounded-lg" required>
-        <input type="email" placeholder="E-mail" class="w-full p-3 border rounded-lg" required>
-        <textarea rows="4" placeholder="Mensagem" class="w-full p-3 border rounded-lg" required></textarea>
-        <button type="submit" class="w-full text-center bg-pink-500 text-white py-3 rounded-full hover:bg-pink-400 transition">Enviar Mensagem</button>
-      </form>
-      <div class="mt-6 text-center text-sm text-gray-600">
-        <p>Email: contato@anasilva.com | Tel: +55 (11) 91234-5678</p>
-        <p>Instagram: <a href="#" class="text-pink-500">@Maria Paula</a></p>
+  <div class="max-w-2xl mx-auto">
+    <h2 class="text-2xl md:text-3xl font-semibold text-center mb-8">Contato Profissional</h2>
+
+    <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 text-center text-sm text-gray-700">
+      
+      <!-- Email -->
+      <div>
+        <svg class="mx-auto h-6 w-6 text-pink-500 mb-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 12H8m0 0l4-4m-4 4l4 4" />
+        </svg>
+        <p><strong>Email</strong></p>
+        <a href="mailto:contato@anasilva.com" class="text-pink-600 hover:underline">contato@gmail.com</a>
       </div>
+      
+      <!-- WhatsApp -->
+      <div>
+        <svg class="mx-auto h-6 w-6 text-pink-500 mb-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10.5a9 9 0 101.37 5.56L3 21l5.08-1.3A9 9 0 003 10.5z" />
+        </svg>
+        <p><strong>WhatsApp</strong></p>
+        <a href="https://wa.me/5514997924205?text=Olá!%20Gostaria%20de%20falar%20com%20você." 
+           target="_blank" class="text-pink-600 hover:underline">
+          +55 (11) 91234-5678
+        </a>
+      </div>
+      
+      <!-- Instagram -->
+      <div>
+        <svg class="mx-auto h-6 w-6 text-pink-500 mb-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18 2a9 9 0 00-6 15.29V22l4-2 4 2v-4.71A9 9 0 0018 2z" />
+        </svg>
+        <p><strong>Instagram</strong></p>
+        <a href="https://instagram.com/mariapaula" target="_blank" class="text-pink-600 hover:underline">
+          @mariapaula
+        </a>
+      </div>
+
     </div>
-  </section>
+  </div>
+</section>
 
   <!-- Footer -->
   <footer class="py-6 text-center text-gray-500 text-sm bg-white">
-    &copy; 2025 Ana Silva. Todos direitos reservados.
+    <a href="https://danilobiancod3.github.io/danilo/" target="_blank">
+      2025 - Desenvolvido por Danilo Gregorio Bianco.
+    </a>
   </footer>
 
   <script>
